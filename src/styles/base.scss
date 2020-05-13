@@ -1,0 +1,30 @@
+:root {
+  --main-color: #9aa0a6;
+  --main-bg-color: #1f2023;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
+  margin: 0 auto;
+  overflow-x: hidden;
+  font-family: "JetBrains Mono", Arial, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
