@@ -1,0 +1,15 @@
+.link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  color: inherit;
+  padding: 0 8px;
+  border-radius: 4px;
+  transition: all .2s ease;
+
+  &:hover {
+    background-color: #161719;
+  }
+}
