@@ -1,0 +1,38 @@
+.folder {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &:not(:last-child) {
+    margin: 8px 0;
+  }
+
+  &__header {
+    display: block;
+    background-color: #161719;
+    font-weight: 500;
+    border-radius: 4px;
+    width: 100%;
+    text-align: center;
+
+    &.is-open {
+      border-radius: 4px 4px 0 0;
+    }
+
+    &:hover + .folder__content {
+      background-color: #232427;
+    }
+  }
+
+  &__content {
+    padding: 8px;
+    overflow: hidden;
+    transition: all .3s ease;
+
+    .folder__content {
+      border-radius: 0 0 4px 4px;
+      border: 2px solid #161719;
+      border-top: none;
+    }
+  }
+}
