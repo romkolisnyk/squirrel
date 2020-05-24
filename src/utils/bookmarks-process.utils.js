@@ -11,10 +11,10 @@ export const processBookmarks = (bookmarks) => {
 
   const processBookmarksNodes = (nodes) => {
     nodes.forEach((node) => {
-      const {title, id} = node;
+      const {id} = node;
 
       if (node.children) {
-        foldersByID[title] = node;
+        foldersByID[id] = withoutChildren(node);
         processBookmarksNodes(node.children);
       } else {
         bookmarksByID[id] = node;
