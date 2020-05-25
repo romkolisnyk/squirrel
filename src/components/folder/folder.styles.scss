@@ -1,23 +1,25 @@
 .folder {
-  margin: 0;
   padding: 0;
   list-style: none;
-
-  &:not(:last-child) {
-    margin: 8px 0;
-  }
+  background-color: #292a2d;
+  box-shadow: 0 0 4px #121213e6;
+  border-radius: 4px;
 
   &__header {
-    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    display: inline-block;
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+    text-decoration: none;
+    color: inherit;
+    padding: 0 8px;
+    border-radius: 4px;
+    transition: all .2s ease;
     background-color: #161719;
     font-weight: 500;
-    border-radius: 4px;
-    width: 100%;
     text-align: center;
-
-    &.is-open {
-      border-radius: 4px 4px 0 0;
-    }
 
     &:hover + .folder__content {
       background-color: #232427;
@@ -29,10 +31,10 @@
     overflow: hidden;
     transition: all .3s ease;
 
-    .folder__content {
-      border-radius: 0 0 4px 4px;
-      border: 2px solid #161719;
-      border-top: none;
-    }
+    //.folder__content {
+    //  border-radius: 0 0 4px 4px;
+    //  border: 2px solid #161719;
+    //  border-top: none;
+    //}
   }
 }
