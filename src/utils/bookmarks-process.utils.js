@@ -14,7 +14,9 @@ export const processBookmarks = (bookmarks) => {
       const {id} = node;
 
       if (node.children) {
-        foldersByID[id] = withoutChildren(node);
+        if (node.parentId) {
+          foldersByID[id] = withoutChildren(node);
+        }
         processBookmarksNodes(node.children);
       } else {
         bookmarksByID[id] = node;
