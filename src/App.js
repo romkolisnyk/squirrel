@@ -1,28 +1,33 @@
 /*global chrome*/
 import React, { useEffect, useState } from 'react';
-import FolderItemComponent from "./components/folder-item/folder-item.component";
+import { processBookmarks } from "./utils/bookmarks-process.utils";
+import FolderComponent from "./components/folder/folder.component";
+import ContainerComponent from "./components/container/container.component";
 
 function App() {
-  const [ bookMarks, setBookmarks ] = useState([]);
+  const [ bookmarks, setBookmarks ] = useState([]);
 
   useEffect(() => {
     chrome.bookmarks.getTree(setBookmarks);
   }, [])
 
-  if (bookMarks.length !== 0) {
-    console.log(bookMarks[0].children[0].children[0].children)
-  }
+  const {foldersByID, bookmarksByID} = processBookmarks(bookmarks);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <ul>
-          {
-            bookMarks.length !== 0 && bookMarks[0].children[0].children[0].children.map(item =>
-              <FolderItemComponent { ...item }/>)
-          }
-        </ul>
-      </header>
+      <ContainerComponent>
+        {
+          Object.values(foldersByID).map(item => {
+            return (
+              <div>
+                <FolderComponent
+                  title={item.title}
+                  items={Object.values(bookmarksByID).filter((bookmark) => bookmark.parentId === item.id)}/>
+              </div>
+            )
+          })
+        }
+      </ContainerComponent>
     </div>
   );
 }
