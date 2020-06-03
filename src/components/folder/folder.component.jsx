@@ -8,10 +8,12 @@ const FolderComponent = (props) => {
   const {items, title} = props;
   return (
     <div className='folder'>
-      <p className='folder__header'>{title.toUpperCase()}</p>
-      {
-        items.map((item) => <FolderItemComponent {...item}/>)
-      }
+      <p className='folder__header'>{title}</p>
+      <ul className='folder__content'>
+        {
+          items.map((item) => <FolderItemComponent {...item}/>)
+        }
+      </ul>
     </div>
   );
 };

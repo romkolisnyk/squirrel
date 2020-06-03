@@ -8,7 +8,7 @@ const LinkComponent = (props) => {
   return (
     <a href={ url } className='link'>
       <IconComponent url={ url }/>
-      <span>{ title }</span>
+      <span className='link__title'>{ title }</span>
     </a>
   );
 };
