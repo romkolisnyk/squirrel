@@ -1,40 +1,40 @@
 .folder {
-  padding: 0;
   list-style: none;
-  background-color: #292a2d;
-  box-shadow: 0 0 4px #121213e6;
+  background-color: var(--folder-bg-color);
   border-radius: 4px;
+  border: 2px solid var(--folder-frame-bg-color);
+  margin-bottom: 15px;
+  overflow: hidden;
+
+  //TODO: Remove hardcoded temp styles for columns
+  break-inside: avoid;
 
   &__header {
-    box-sizing: border-box;
     width: 100%;
+    padding: 8px;
     margin: 0;
-    display: inline-block;
-    font-size: 1.5rem;
-    line-height: 2.3rem;
-    text-decoration: none;
-    color: inherit;
-    padding: 0 8px;
-    border-radius: 4px;
-    transition: all .2s ease;
-    background-color: #161719;
+    background-color: var(--folder-frame-bg-color);
     font-weight: 500;
+    text-transform: uppercase;
     text-align: center;
+    cursor: pointer;
+    user-select: none;
 
     &:hover + .folder__content {
-      background-color: #232427;
+      background-color: var(--main-bg-color);
     }
   }
 
   &__content {
     padding: 8px;
-    overflow: hidden;
-    transition: all .3s ease;
+    transition: .2s;
+  }
 
-    //.folder__content {
-    //  border-radius: 0 0 4px 4px;
-    //  border: 2px solid #161719;
-    //  border-top: none;
-    //}
+  .folder {
+    margin: 15px 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }

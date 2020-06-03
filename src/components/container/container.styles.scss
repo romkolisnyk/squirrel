@@ -1,6 +1,7 @@
 .container {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 1fr 1fr 1fr;
   padding: 20px;
+
+  //TODO: Remove hardcoded temp styles for columns
+  column-count: 4;
+  column-gap: 15px;
 }

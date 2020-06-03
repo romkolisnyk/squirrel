@@ -1,17 +1,15 @@
 :root {
   --main-color: #9aa0a6;
   --main-bg-color: #1f2023;
-}
-
-html {
-  box-sizing: border-box;
-  font-size: 10px;
+  --folder-bg-color: #292a2d;
+  --folder-frame-bg-color: #161719;
+  --link-bg-color: #161719;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 a {
@@ -19,12 +17,15 @@ a {
   text-decoration: none;
 }
 
+ul {
+  @include reset-list;
+}
+
 body {
   background-color: var(--main-bg-color);
   color: var(--main-color);
   margin: 0 auto;
-  overflow-x: hidden;
   font-family: "JetBrains Mono", Arial, sans-serif;
-  font-size: 1.5rem;
-  line-height: 1.5rem;
+  font-size: 16px;
+  line-height: 1.2;
 }

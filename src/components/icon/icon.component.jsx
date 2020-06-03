@@ -13,7 +13,7 @@ const IconComponent = (props) => {
       className='icon'
       src={ src1x }
       srcSet={ src2x }
-      alt={ `${ url } website icon` }
+      alt={ `website favicon` }
     />
   );
 };

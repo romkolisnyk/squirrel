@@ -19,11 +19,9 @@ function App() {
         {
           Object.values(foldersByID).map(item => {
             return (
-              <div>
-                <FolderComponent
-                  title={item.title}
-                  items={Object.values(bookmarksByID).filter((bookmark) => bookmark.parentId === item.id)}/>
-              </div>
+              <FolderComponent
+                title={item.title}
+                items={Object.values(bookmarksByID).filter((bookmark) => bookmark.parentId === item.id)}/>
             )
           })
         }

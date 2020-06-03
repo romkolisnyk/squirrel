@@ -1,15 +1,18 @@
 .link {
   display: flex;
   align-items: center;
-  width: 100%;
-  font-size: 1.5rem;
-  line-height: 3rem;
   color: inherit;
-  padding: 0 8px;
+  padding: 10px 8px;
   border-radius: 4px;
-  transition: all .2s ease;
+  transition: .2s;
 
   &:hover {
-    background-color: #161719;
+    background-color: var(--link-bg-color);
+  }
+
+  &__title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 }
