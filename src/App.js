@@ -6,7 +6,7 @@ import ContainerComponent from "./components/container/container.component";
 
 function App() {
   const [ bookmarks, setBookmarks ] = useState([]);
-  const [columnsCount, setColumnsCount] = useState(4);
+  const [ columnsCount, setColumnsCount ] = useState(4);
 
   useEffect(() => {
     chrome.bookmarks.getTree(setBookmarks);
@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className="App">
-        //TODO MOVE TO COMPONENT IN FEATURE
+        //TODO MOVE TO COMPONENT IN FUTURE
         <input type="text" onChange={handleColumnsCountChange} value={columnsCount} placeholder={"number"}></input>
       <ContainerComponent>
         {
