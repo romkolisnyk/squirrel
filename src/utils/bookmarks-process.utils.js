@@ -1,4 +1,4 @@
-const withoutChildren = (bookmark) => {
+const getFolderWithoutChildren = (bookmark) => {
   const {children, ...otherValues} = bookmark;
   return {
     ...otherValues,
@@ -15,7 +15,7 @@ export const processBookmarks = (bookmarks) => {
 
       if (node.children) {
         if (node.parentId) {
-          foldersByID[id] = withoutChildren(node);
+          foldersByID[id] = getFolderWithoutChildren(node);
         }
         processBookmarksNodes(node.children);
       } else {
