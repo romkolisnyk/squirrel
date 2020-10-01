@@ -1,7 +1,6 @@
 .container {
   padding: 20px;
 
-  //TODO: Remove hardcoded temp styles for columns
-  column-count: 4;
+  column-count: var(--columns-count);
   column-gap: 15px;
 }
